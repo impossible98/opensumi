@@ -18,15 +18,15 @@ RUN yarn --ignore-scripts --network-timeout 1000000&& \
 # 
 FROM node:14 as app
 
-RUN apt-get update; \
-    apt-get install -y --no-install-recommends \
-        zsh \
-	; \
-
 ENV WORKSPACE_DIR /workspace
 ENV EXTENSION_DIR /root/.sumi/extensions
 ENV EXT_MODE js
 ENV NODE_ENV production
+
+RUN apt-get update; \
+    apt-get install -y --no-install-recommends \
+        zsh \
+	; \
 
 RUN mkdir -p ${WORKSPACE_DIR}  &&\
     mkdir -p ${EXTENSION_DIR}
@@ -42,7 +42,7 @@ COPY --from=builder dist-node dist-node
 COPY --from=builder hosted hosted
 COPY --from=builder extensions /root/.sumi/extensions
 
-VOLUME ["/workspace"]
+VOLUME ${WORKSPACE_DIR}
 
 EXPOSE 8000
 
