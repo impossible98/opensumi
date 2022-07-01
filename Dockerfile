@@ -24,9 +24,9 @@ ENV EXT_MODE js
 ENV NODE_ENV production
 
 RUN apt-get update; \
-    apt-get install -y --no-install-recommends \
+    apt-get install --yes --no-install-recommends \
         zsh \
-	; \
+    ; \
 
 RUN mkdir -p ${WORKSPACE_DIR}  &&\
     mkdir -p ${EXTENSION_DIR}
