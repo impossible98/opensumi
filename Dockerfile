@@ -23,8 +23,6 @@ ENV EXTENSION_DIR /root/.sumi/extensions
 ENV EXT_MODE js
 ENV NODE_ENV production
 
-RUN apt-get update; \
-
 RUN mkdir -p ${WORKSPACE_DIR}  &&\
     mkdir -p ${EXTENSION_DIR}
 
