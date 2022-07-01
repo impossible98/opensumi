@@ -42,7 +42,7 @@ COPY --from=builder dist-node dist-node
 COPY --from=builder hosted hosted
 COPY --from=builder extensions /root/.sumi/extensions
 
-VOLUME ${WORKSPACE_DIR}
+VOLUME ["/workspace"]
 
 EXPOSE 8000
 
