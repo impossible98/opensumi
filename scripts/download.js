@@ -9,12 +9,12 @@ const got = require('got');
 const urllib = require('urllib');
 const awaitEvent = require('await-event');
 const { v4 } = require('uuid');
-
+// @ts-check
 const targetDir = path.resolve(__dirname, '../extensions/');
 
 const { extensions } = require(path.resolve(
   __dirname,
-  './extensions.json'
+  './extensions.json',
 ));
 
 const parallelRunPromise = (lazyPromises, n) => {
@@ -83,7 +83,7 @@ function openZipStream(zipFile, entry) {
 function modeFromEntry(entry) {
   const attr = entry.externalFileAttributes >> 16 || 33188;
 
-  return [448 /* S_IRWXU */, 56 /* S_IRWXG */, 7 /* S_IRWXO */]
+  return [448, /* S_IRWXU */ 56, /* S_IRWXG */ 7 /* S_IRWXO */]
     .map((mask) => attr & mask)
     .reduce((a, b) => a + b, attr & 61440 /* S_IFMT */);
 }
@@ -158,7 +158,7 @@ function unzipFile(dist, targetDirName, tmpZipFile) {
                 // rename .asar, if filename has been modified
                 fs.renameSync(
                   targetFileName,
-                  path.join(extensionDir, originalFileName)
+                  path.join(extensionDir, originalFileName),
                 );
               }
               zipFile.readEntry();
@@ -188,7 +188,7 @@ const installExtension = async (namespace, name, version) => {
     const { targetDirName, tmpZipFile } = await downloadExtension(
       res.data.files.download,
       namespace,
-      name
+      name,
     );
     // 解压插件
     await unzipFile(targetDir, targetDirName, tmpZipFile);

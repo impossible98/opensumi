@@ -2942,6 +2942,13 @@ domutils@^2.5.2, domutils@^2.8.0:
     domelementtype "^2.2.0"
     domhandler "^4.2.0"
 
+dprint@^0.30.0:
+  version "0.30.0"
+  resolved "https://registry.yarnpkg.com/dprint/-/dprint-0.30.0.tgz#f1df9ee4fc691e911ee3df30f2737a737c2aec21"
+  integrity sha512-9HtWvFM02I66k5VU1iUWkpD0HJ9jvsFQALQzB8qat0N8YcSeyBPthIy8AqBnIE/ahVTaQXooPGV3WWoWXlRwFA==
+  dependencies:
+    yauzl "=2.10.0"
+
 drivelist@^6.4.3:
   version "6.4.6"
   resolved "https://registry.npmjs.org/drivelist/-/drivelist-6.4.6.tgz#3d092dd8b771fbcfda170784ba0d72db58c7554a"
@@ -9378,7 +9385,7 @@ yargs@^13.3.2:
     y18n "^4.0.0"
     yargs-parser "^13.1.2"
 
-yauzl@^2.10.0:
+yauzl@=2.10.0, yauzl@^2.10.0:
   version "2.10.0"
   resolved "https://registry.npmjs.org/yauzl/-/yauzl-2.10.0.tgz#c7eb17c93e112cb1086fa6d8e51fb0667b79a5f9"
   integrity sha1-x+sXyT4RLLEIb6bY5R+wZnt5pfk=

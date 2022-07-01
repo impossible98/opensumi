@@ -3,9 +3,9 @@ import { ExpressFileServerModule } from '@opensumi/ide-express-file-server/lib/b
 import '@opensumi/ide-core-browser/lib/style/index.less';
 import '@opensumi/ide-core-browser/lib/style/icon.less';
 
-import { renderApp } from './render-app';
 import { CommonBrowserModules } from '../../src/browser/common-modules';
 import { layoutConfig } from './layout-config';
+import { renderApp } from './render-app';
 import './main.less';
 import './styles.less';
 

@@ -39,7 +39,7 @@ module.exports = {
     ],
   },
   externals: [
-    function (context, request, callback) {
+    function(context, request, callback) {
       if (['node-pty', 'oniguruma', 'nsfw', 'spdlog', 'efsw', 'getmac'].indexOf(request) !== -1) {
         return callback(null, `commonjs ${request}`);
       }

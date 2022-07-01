@@ -42,7 +42,7 @@ module.exports = {
     ],
   },
   externals: [
-    function (context, request, callback) {
+    function(context, request, callback) {
       if (
         [
           'node-pty',

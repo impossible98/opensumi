@@ -1,9 +1,9 @@
-import * as path from 'path';
+import { Deferred } from '@opensumi/ide-core-common';
+import { IServerAppOpts, NodeModule, ServerApp } from '@opensumi/ide-core-node';
 import * as http from 'http';
 import * as Koa from 'koa';
 import * as koaStatic from 'koa-static';
-import { Deferred } from '@opensumi/ide-core-common';
-import { IServerAppOpts, ServerApp, NodeModule } from '@opensumi/ide-core-node';
+import * as path from 'path';
 
 export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) {
   const app = new Koa();
@@ -30,8 +30,8 @@ export async function startServer(arg1: NodeModule[] | Partial<IServerAppOpts>) 
   if (Array.isArray(arg1)) {
     opts = {
       ...opts,
-       modulesInstances: arg1,
-      };
+      modulesInstances: arg1,
+    };
   } else {
     opts = {
       ...opts,

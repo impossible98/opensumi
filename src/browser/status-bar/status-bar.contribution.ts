@@ -1,4 +1,4 @@
-import { Injectable, Autowired } from '@opensumi/di';
+import { Autowired, Injectable } from '@opensumi/di';
 import {
   ClientAppContribution,
   Domain,
@@ -21,12 +21,11 @@ const STATUS_BAR_ICON = 'https://img.alicdn.com/imgextra/i1/O1CN01I0fKZ51PTgHByj
 
 const OPEN_SUMI_REPOSITORY_COMMAND = {
   id: 'opensumi.openRepository',
-}
+};
 
 @Injectable()
 @Domain(ClientAppContribution, CommandContribution)
 export class StatusBarContribution extends WithEventBus implements ClientAppContribution, CommandContribution {
-
   @Autowired(IconService)
   private iconService: IconService;
 
