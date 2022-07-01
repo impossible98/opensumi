@@ -18,8 +18,7 @@ RUN yarn --ignore-scripts --network-timeout 1000000&& \
 # 
 FROM node:14 as app
 
-RUN set -eux; \
-    apt-get update; \
+RUN apt-get update; \
     apt-get install -y --no-install-recommends \
         zsh \
 	; \
@@ -43,7 +42,7 @@ COPY --from=builder dist-node dist-node
 COPY --from=builder hosted hosted
 COPY --from=builder extensions /root/.sumi/extensions
 
-VOLUME /workspace
+VOLUME ${WORKSPACE_DIR}
 
 EXPOSE 8000
 
