@@ -15,8 +15,14 @@ RUN yarn --ignore-scripts --network-timeout 1000000&& \
     yarn run build && \
     yarn run download:extensions && \
     rm -rf ./node_modules
-
+# 
 FROM node:14 as app
+
+RUN set -eux; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends \
+        zsh \
+	; \
 
 ENV WORKSPACE_DIR /workspace
 ENV EXTENSION_DIR /root/.sumi/extensions

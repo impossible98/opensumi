@@ -1,4 +1,18 @@
-## OpenSumi Web 集成示例
+## OpenSumi Web
+
+## Docker
+
+```bash
+# pull image
+docker pull impossible98/opensumi
+# run image
+docker run --detach \
+    --name opensumi \
+    --publish 8448:8000 \
+    --restart always \
+    --volume <path>/:/workspace/ \
+    impossible98/opensumi
+```
 
 ![Docker Image CI](https://github.com/opensumi/ide-startup/actions/workflows/docker-image.yml/badge.svg)
 
@@ -46,3 +60,6 @@ docker run --rm -d  -p 8080:8000/tcp ghcr.io/opensumi/opensumi-web:latest
 ```
 
 浏览器打开 `http://0.0.0.0:8080`
+
+
+
